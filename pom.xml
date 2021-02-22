@@ -3,25 +3,34 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--    定义这是一个父工程：作为父工程需要有packaging标签，且项目中不能有src文件夹-->
     <packaging>pom</packaging>
 
+    <!--此标签用于关联子项目-->
     <modules>
         <module>yeb-server</module>
     </modules>
 
+<!--所有springboot项目的公共父工程-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+<!--    父工程的gav工程三坐标-->
     <groupId>com.test</groupId>
     <artifactId>yeb</artifactId>
     <version>1.0.0</version>
+
+<!--    pom项目对外名称,Maven产生的文档用-->
     <name>yeb</name>
+
     <description>Demo project for Spring Boot</description>
 
     <properties>
+<!--        java版本-->
         <java.version>1.8</java.version>
     </properties>
 
