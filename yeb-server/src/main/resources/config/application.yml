@@ -1,0 +1,71 @@
+#配置内资tomcat服务器的基本属性
+server:
+  port: 8081
+
+
+
+
+#    数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone = GMT
+    username: root
+    password: root
+
+    #spring自带的连接池，号称目前最快
+    #    连接池叫hikari
+    hikari:
+      #      自定义连接池名称
+      pool-name: dateHikari
+      #      最小连接数
+      minimum-idle: 15
+      #      空闲连接存活最大时间
+      idle-timeout: 180000
+      #      最大连接数 默认是10
+      maximum-pool-size: 10
+      #      从连接池返回的连接自动提交
+      auto-commit: true
+      #      连接最大存活时间 0表示永久存活，默认是 1800000（30分钟）
+      max-lifetime: 1800000
+      #      连接超时时间 30000毫秒（30秒）
+      connection-timeout: 30000
+      #      测试连接是否可用的查询语句
+      connection-test-query: SELECT 1
+
+
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com/test/server/pojo
+  configuration:
+    map-underscore-to-camel-case: false
+
+# mybatis sql 打印 （方法接口所在的包，不是mapper.xml所在的包）
+logging:
+  level:
+    com.test.server.mapper: debug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
