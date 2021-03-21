@@ -9,6 +9,7 @@
     <!--此标签用于关联子项目-->
     <modules>
         <module>yeb-server</module>
+        <module>yeb-generator</module>
     </modules>
 
 <!--所有springboot项目的公共父工程-->

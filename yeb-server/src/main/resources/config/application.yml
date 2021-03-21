@@ -8,10 +8,10 @@ server:
 #    数据源配置
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone = GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.32.130:3306/yeb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=GMT
     username: root
-    password: root
+    password: 123456
 
     #spring自带的连接池，号称目前最快
     #    连接池叫hikari
@@ -34,24 +34,32 @@ spring:
       connection-test-query: SELECT 1
 
 
+
 # mybatis-plus配置
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
-  type-aliases-package: com/test/server/pojo
+  type-aliases-package: com/yeb/server/pojo
   configuration:
+#    关闭自动驼峰命名
     map-underscore-to-camel-case: false
 
 # mybatis sql 打印 （方法接口所在的包，不是mapper.xml所在的包）
 logging:
   level:
-    com.test.server.mapper: debug
+    com.yeb.server.mapper: debug
 
 
 
 
-
-
-
+#JWT令牌配置
+jwt:
+#  jwt存储的请求头
+  tokenHeader: Authorization
+#  jwt 加密使用的密钥
+  secret: yeb-secret
+#  jwt的超限时间（单位秒-这里是1周：60*60*24*7）
+  expriation: 604800
+  tokenHead: Bearer
 
 
 

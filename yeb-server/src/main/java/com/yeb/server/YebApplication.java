@@ -1,4 +1,4 @@
-package com.test.server;
+package com.yeb.server;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @createTime 2021年02月23日 00:07:00
  */
 @SpringBootApplication
-@MapperScan("com.test.server.mapper")
-public class yebApplication {
+@MapperScan("com.yeb.server.mapper")
+public class YebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(yebApplication.class, args);
+        SpringApplication.run(YebApplication.class, args);
     }
 }
