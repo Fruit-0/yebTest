@@ -1,6 +1,7 @@
 package com.yeb.server.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -17,7 +18,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author fruit
- * @since 2021-03-16
+ * @since 2021-03-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -33,6 +34,7 @@ public class AdminRole implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "用户id")
+    @TableField("adminId")
     private Integer adminId;
 
     @ApiModelProperty(value = "权限id")
