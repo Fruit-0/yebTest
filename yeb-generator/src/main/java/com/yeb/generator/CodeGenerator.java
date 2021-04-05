@@ -72,7 +72,7 @@ public class CodeGenerator {
 
             // 包配置
             PackageConfig pc = new PackageConfig();
-            pc.setParent("com.yeb")
+            pc.setParent("com.yeb.server")
                     .setEntity("pojo")
                     .setMapper("mapper")
                     .setService("service")

@@ -30,7 +30,7 @@ public class JwtTokenUtil {
     //jwt的创建时间
     private static final String CLAIM_KEY_CREATED = "created";
     //jwt头部指定的签名部分加盐以后的加密算法
-    private static final SignatureAlgorithm doSecretType=  SignatureAlgorithm.ES512;
+    private static final SignatureAlgorithm doSecretType=  SignatureAlgorithm.HS512;
 
     //设置jwt的加密盐（直接从application.yml文件中获取jwt的配置信息）
     @Value("${jwt.secret}")
@@ -115,7 +115,7 @@ public class JwtTokenUtil {
         //从token中获取username的信息
         String userName = getUserNameFromToken(token);
         //只有当token里的username信息和当前系统中的username信息一致，并且token未过期，才认定token有效
-        boolean b = userName.equals(userDetails.getUsername()) && istokenExpired(token);
+        boolean b = userName.equals(userDetails.getUsername()) && !istokenExpired(token);
 
         return b;
 

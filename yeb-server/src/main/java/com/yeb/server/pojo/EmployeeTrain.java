@@ -1,9 +1,11 @@
 package com.yeb.server.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,7 +19,7 @@ import java.time.LocalDate;
  * </p>
  *
  * @author fruit
- * @since 2021-03-16
+ * @since 2021-03-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -28,15 +30,22 @@ public class EmployeeTrain implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    @ApiModelProperty(value = "员工编号")
     private Integer eid;
 
+    @ApiModelProperty(value = "培训日期")
+    @TableField("trainDate")
     private LocalDate trainDate;
 
+    @ApiModelProperty(value = "培训内容")
+    @TableField("trainContent")
     private String trainContent;
 
+    @ApiModelProperty(value = "备注")
     private String remark;
 
 

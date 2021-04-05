@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeb.mapper.EmployeeMapper">
+<mapper namespace="com.yeb.server.mapper.EmployeeMapper">
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.yeb.server.pojo.Employee">
@@ -25,7 +25,7 @@
         <result column="school" property="school" />
         <result column="begin_date" property="beginDate" />
         <result column="work_state" property="workState" />
-        <result column="work_id" property="workId" />
+        <result column="work_id" property="workID" />
         <result column="contract_term" property="contractTerm" />
         <result column="conversion_time" property="conversionTime" />
         <result column="not_work_date" property="notWorkDate" />
